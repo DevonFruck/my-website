@@ -3,8 +3,7 @@ import './App.css'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 import {
   AboutMe,
@@ -13,45 +12,48 @@ import {
   HomePage
 } from './Pages'
 
+import styled from 'styled-components'
+import {
+  NavBar
+} from './Components'
 export const App = () => {
   return (
-    <Router>
-        {/* For debug */}
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/experience">My Experiences</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact Me</Link>
-            </li>
-          </ul>
-        </nav>
+    <Background>
+      <NavBar />
+      <Router >
+        
 
         {/* Switch for determining which component to make visible */}
-        <Switch>
-          <Route path="/">
-            <HomePage />
-          </Route>
-          <Route path="/about">
+        <Switch>  
+          
+          {/* About me page */ }
+          <Route path='/about'>
             <AboutMe />
           </Route>
-          <Route path="/experience">
+
+            {/* My previous experiences */ }
+          <Route path='/experience'>
             <MyExperiences />
           </Route>
-          <Route path="/contact">
+
+          {/* Page with ways to contact me */ }
+          <Route path='/contact'>
             <ContactMe />
           </Route>
 
+          {/* Home page */ }
+          <Route path='/'>
+            <HomePage />
+          </Route>
         </Switch>
-    </Router>
+      </Router>
+    </Background>
   )
 }
+
+const Background = styled.header`
+  background-color: royalblue;
+  min-height: 100vh;
+`
 
 export default App

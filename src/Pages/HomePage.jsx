@@ -1,51 +1,40 @@
 import {
   Button
 } from '@material-ui/core'
-import { Link } from 'react-router-dom'
 import logo from '../logo.svg';
 import styled from 'styled-components'
 
 export const HomePage = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Link to='/about' style={{ textDecoration: 'none' }}>
-          <StyledButton
-          variant='contained'
-          >
-            About me
-          </StyledButton>
-        </Link>
+    <header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <StyledButton
+      variant='contained'
+      href='/about'
+      >
+        About me
+      </StyledButton>
 
-        <Link to='/experience' style={{ textDecoration: 'none' }}>
-          <StyledButton
-          variant='contained'
-          color='primary'
-          to={'/experience'}
-          >
-            Experience
-          </StyledButton>
-        </Link>
+      <StyledButton
+      variant='contained'
+      href={'/experience'}
+      >
+        Experience
+      </StyledButton>
 
-        <Link to='/contact' style={{ textDecoration: 'none' }}>
-          <StyledButton
-          variant='contained'
-          color='primary'
-          to={'/contacts'}
-          >
-            Contact me
-          </StyledButton>
-        </Link>
-
-      </header>
-    </div>
+      <StyledButton
+      variant='contained'
+      href={'/contacts'}
+      >
+        Contact me
+      </StyledButton>
+    </header>
   )
 }
 
 const StyledButton = styled(Button)`
-  background-color: royalblue;
+  background-color: grey;
   color: white;
   width: 10rem;
-  font-family: 'Comic Sans MS';
+  
 `
