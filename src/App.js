@@ -16,7 +16,6 @@ import {
 export const App = () => {
   return (
     <Router>
-
         {/* For debug */}
         <nav>
           <ul>
@@ -30,7 +29,7 @@ export const App = () => {
               <Link to="/experience">My Experiences</Link>
             </li>
             <li>
-              <Link to="/contact">My Experiences</Link>
+              <Link to="/contact">Contact Me</Link>
             </li>
           </ul>
         </nav>
@@ -40,7 +39,7 @@ export const App = () => {
           <Route path="/">
             <HomePage />
           </Route>
-          <Route path="/aboutme">
+          <Route path="/about">
             <AboutMe />
           </Route>
           <Route path="/experience">
@@ -55,39 +54,4 @@ export const App = () => {
   )
 }
 
-
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button
-        variant='contained'
-        color='primary'
-        onClick={() => console.log('about me!')}
-        >
-          About me
-        </Button>
-        <Button
-        variant='contained'
-        color='primary'
-        onClick={() => console.log('experience!')}
-        >
-          Experience
-        </Button>
-        <Button
-        variant='contained'
-        color='primary'
-        onClick={() => console.log('contact me')}
-        >
-          Contact me
-        </Button>
-      </header>
-    </div>
-  )
-}
-*/
-
-export default App;
+export default App

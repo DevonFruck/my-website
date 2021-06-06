@@ -10,7 +10,7 @@ export const HomePage = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Link to='/aboutme' style={{ textDecoration: 'none' }}>
+        <Link to='/about' style={{ textDecoration: 'none' }}>
           <StyledButton
           variant='contained'
           >
@@ -28,7 +28,7 @@ export const HomePage = () => {
           </StyledButton>
         </Link>
 
-        <Link to='/contacts' style={{ textDecoration: 'none' }}>
+        <Link to='/contact' style={{ textDecoration: 'none' }}>
           <StyledButton
           variant='contained'
           color='primary'
