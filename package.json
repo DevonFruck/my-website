@@ -1,5 +1,5 @@
 {
-  "homepage": "http://DevonFruck.github.io/my-website",
+  "homepage": "https://devonfruck.github.io/my-website",
   "name": "my-website",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "my-website -d build"
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
