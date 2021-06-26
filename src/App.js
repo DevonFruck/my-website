@@ -1,10 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom'
+import styled from 'styled-components'
+import { Tabs, Tab } from '@material-ui/core'
 import {
   AboutMe,
   ContactMe,
@@ -12,46 +9,46 @@ import {
   HomePage
 } from './Pages'
 
-import styled from 'styled-components'
-import {
-  NavBar
-} from './Components'
 export const App = () => {
+  const [tabIndex, setTabIndex] = useState(1)
+
+  const handleChange = (event, newValue) => {
+    setTabIndex(newValue)
+  }
+
   return (
     <Background>
-      <NavBar />
-      <Router >
-        
+      <CustomTabs
+      orientation="vertical"
+      value = {tabIndex}
+      onChange={handleChange}
+      >
+        <Tab label='About Me' value={1} />
+        <Tab label='Experience' value={2} />
+        <Tab label='Contact' value={3} />
+      </CustomTabs>
 
-        {/* Switch for determining which component to make visible */}
-        <Switch>  
-          
-          {/* About me page */ }
-          <Route path='/about'>
-            <AboutMe />
-          </Route>
+      {tabIndex === 1
+        ? <AboutMe />
+        : tabIndex === 2
+        ? <MyExperiences />
+        : tabIndex === 3
+        ? <ContactMe />
+        : null
+      }
 
-            {/* My previous experiences */ }
-          <Route path='/experience'>
-            <MyExperiences />
-          </Route>
-
-          {/* Page with ways to contact me */ }
-          <Route path='/contact'>
-            <ContactMe />
-          </Route>
-
-          {/* Home page */ }
-          <Route path='/'>
-            <HomePage />
-          </Route>
-        </Switch>
-      </Router>
     </Background>
   )
 }
 
+const CustomTabs = styled(Tabs)`
+  width: 10rem;
+  font-size: 8px;
+  padding-right: 2rem;
+`
+
 const Background = styled.header`
+  display: flex;
   background-color: royalblue;
   min-height: 100vh;
 `
