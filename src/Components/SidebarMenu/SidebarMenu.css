@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: #24305E;
+  transition: width 0.2s linear;
+}
+
+.menu-btn {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  border-radius: 0px;
+  background-color: #374785;
+  color: #Fdfcfa;
+}
+
+.menu-btn:hover {
+  color: #F8E9A1;
+}
+
+.menu-btn span {
+  font-size: 2rem;
+  padding-left: 1rem;
+  transition: opacity ease-in 2s;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #Fdfcfa;
+  font-family: 'Courier New', Courier, monospace;
+}
+.fade-out {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
+}

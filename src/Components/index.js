@@ -1,2 +1,2 @@
 export { NavBar } from './NavBar'
-export { SidebarMenu }  from './SidebarMenu'
+export { SidebarMenu }  from './SidebarMenu/SidebarMenu'
