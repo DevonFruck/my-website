@@ -4,6 +4,7 @@
   justify-content: left;
   background-color: #24305E;
   transition: width 0.2s linear;
+  position: fixed;
 }
 
 .menu-btn {
